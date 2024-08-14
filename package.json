@@ -1,6 +1,6 @@
 {
   "name": "@ramrnpm/capacitor-azure-notification-hubs",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Capacitor plugin to register push notifications and manage tags via Azure Notification Hub. Tag management is only implemented for ios.",
   "keywords": [
     "capacitor",
@@ -31,7 +31,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "ramrgitCapacitorAzureNotificationHubs.podspec"
+    "ramrnpmCapacitorAzureNotificationHubs.podspec"
   ],
   "scripts": {
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
