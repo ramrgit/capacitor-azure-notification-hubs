@@ -1,7 +1,7 @@
 {
-  "name": "@jonz94/capacitor-azure-notification-hubs",
-  "version": "3.0.1",
-  "description": "Capacitor plugin to register push notifications via Azure Notification Hub.",
+  "name": "@ramrnpm/capacitor-azure-notification-hubs",
+  "version": "4.0.1",
+  "description": "Capacitor plugin to register push notifications and manage tags via Azure Notification Hub.",
   "keywords": [
     "capacitor",
     "plugin",
@@ -11,16 +11,16 @@
     "notification"
   ],
   "bugs": {
-    "url": "https://github.com/jonz94/capacitor-azure-notification-hubs/issues"
+    "url": "https://github.com/ramrgit/capacitor-azure-notification-hubs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonz94/capacitor-azure-notification-hubs.git"
+    "url": "git+https://github.com/ramrgit/capacitor-azure-notification-hubs.git"
   },
   "license": "0BSD",
   "author": {
-    "name": "jonz94",
-    "email": "jody16888@gmail.com"
+    "name": "ramr",
+    "email": "ramakri+github@gmail.com"
   },
   "main": "dist/plugin.cjs.js",
   "unpkg": "dist/plugin.js",
@@ -31,7 +31,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "Jonz94CapacitorAzureNotificationHubs.podspec"
+    "ramrgitCapacitorAzureNotificationHubs.podspec"
   ],
   "scripts": {
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",

@@ -1,14 +1,13 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 <h3 align="center">Azure Notification Hubs</h3>
-<p align="center"><strong><code>@jonz94/capacitor-azure-notification-hubs</code></strong></p>
+<p align="center"><strong><code>@ramrgit/capacitor-azure-notification-hubs</code></strong></p>
 <p align="center">
-  Capacitor plugin to register push notifications via <a href="https://learn.microsoft.com/en-us/azure/notification-hubs/">Azure Notification Hubs</a>.
+  Capacitor plugin to register push notifications and manage tags via <a href="https://learn.microsoft.com/en-us/azure/notification-hubs/">Azure Notification Hubs</a>. This project was forked from jonz94/capacitor-azure-notification-hubs and extended to add tag management support for ios only. 
 </p>
 
 <p align="center">
-  <a href="https://github.com/jonz94/capacitor-azure-notification-hubs/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/jonz94/capacitor-azure-notification-hubs/ci.yml?branch=main&logo=github&style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@jonz94/capacitor-azure-notification-hubs"><img src="https://img.shields.io/npm/l/@jonz94/capacitor-azure-notification-hubs?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/@jonz94/capacitor-azure-notification-hubs"><img src="https://img.shields.io/npm/v/@jonz94/capacitor-azure-notification-hubs?style=flat-square" /></a>
+
+  <a href="https://www.npmjs.com/package/@ramrgit/capacitor-azure-notification-hubs"><img src="https://img.shields.io/npm/v/@ramrgit/capacitor-azure-notification-hubs?style=flat-square" /></a>
 </p>
 
 ## Install
