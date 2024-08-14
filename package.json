@@ -1,6 +1,6 @@
 {
   "name": "@ramrnpm/capacitor-azure-notification-hubs",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Capacitor plugin to register push notifications and manage tags via Azure Notification Hub. Tag management is only implemented for ios.",
   "keywords": [
     "capacitor",
