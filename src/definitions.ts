@@ -13,6 +13,12 @@ export interface AzureNotificationHubsPlugin {
    */
   register(info: RegisterInfo): Promise<void>;
 
+  addTags(tags: TagsInfo) : Promise<void>;
+
+  clearTags() : Promise<void>;
+
+  clearAndAddTags(tags: TagsInfo) : Promise<void>;
+
   /**
    * Called when the push notification registration finishes without problems.
    *
@@ -58,11 +64,15 @@ export interface RegisterInfo {
   connectionString: string;
 
   /**
-   * The device tag.
+   * Comma separated list of tags.
    *
    * @since 1.0.0
    */
-  deviceTag: string;
+  tags: string;
+}
+
+export interface TagsInfo{
+  tags: string[];
 }
 
 export interface Token {

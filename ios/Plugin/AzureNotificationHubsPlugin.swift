@@ -38,19 +38,58 @@ public class AzureNotificationHubsPlugin: CAPPlugin {
             call.reject("Must provide connectionString")
             return
         }
-        guard let deviceTag = call.getString("deviceTag") else {
-            call.reject("Must provide deviceTag")
+        
+        guard let tags = call.getString("tags") else {
+            call.reject("Must provide tags, a comma separated string of tags")
             return
         }
-
+        
         let options = MSNotificationHubOptions(withOptions: [.alert, .badge, .sound])!
-
+        let tagsArray: [String] = tags.split(separator: ",").map { String($0)}
         DispatchQueue.main.async {
             MSNotificationHub.start(connectionString: connectionString, hubName: notificationHubName, options: options)
-            MSNotificationHub.addTags([deviceTag])
+            MSNotificationHub.clearTags()
+            MSNotificationHub.addTags(tagsArray)
         }
         call.resolve()
     }
+
+    @objc func addTags(_ call: CAPPluginCall) {
+        guard let tags: JSArray = call.getArray("tags") else {
+            print("tags not sepcified")
+            call.reject("Must provide an array of strings to use as tags")
+            return
+        }
+        
+        let tagsArray: [String] = tags.compactMap{ $0 as? String } //convert the jsArray into a [String]
+        DispatchQueue.main.async {
+            MSNotificationHub.addTags(tagsArray)
+        }
+        call.resolve()
+    }
+    
+    @objc func clearTags(_ call: CAPPluginCall){
+        DispatchQueue.main.async {
+            MSNotificationHub.clearTags()
+        }
+        call.resolve()
+    }
+    
+    @objc func clearAndAddTags(_ call: CAPPluginCall) {
+        guard let tags: JSArray = call.getArray("tags") else {
+            print("tags not sepcified")
+            call.reject("Must provide an array of strings to use as tags")
+            return
+        }
+        
+        let tagsArray: [String] = tags.compactMap{ $0 as? String } //convert the jsArray into a [String]
+        DispatchQueue.main.async {
+            MSNotificationHub.clearTags()
+            MSNotificationHub.addTags(tagsArray)
+        }
+        call.resolve()
+    }
+    
 
     @objc public func didRegisterForRemoteNotificationsWithDeviceToken(notification: NSNotification) {
         if let deviceToken = notification.object as? Data {

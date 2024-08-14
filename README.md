@@ -107,6 +107,9 @@ const registerNotifications = async () => {
 <docgen-index>
 
 * [`register(...)`](#register)
+* [`addTags(...)`](#addtags)
+* [`clearTags()`](#cleartags)
+* [`clearAndAddTags(...)`](#clearandaddtags)
 * [`addListener('registration', ...)`](#addlistenerregistration-)
 * [`addListener('registrationError', ...)`](#addlistenerregistrationerror-)
 * [`removeAllListeners()`](#removealllisteners)
@@ -135,6 +138,41 @@ notification permissions, use `PushNotifications.requestPermissions()` from
 | **`info`** | <code><a href="#registerinfo">RegisterInfo</a></code> |
 
 **Since:** 1.0.0
+
+--------------------
+
+
+### addTags(...)
+
+```typescript
+addTags(tags: TagsInfo) => Promise<void>
+```
+
+| Param      | Type                                          |
+| ---------- | --------------------------------------------- |
+| **`tags`** | <code><a href="#tagsinfo">TagsInfo</a></code> |
+
+--------------------
+
+
+### clearTags()
+
+```typescript
+clearTags() => Promise<void>
+```
+
+--------------------
+
+
+### clearAndAddTags(...)
+
+```typescript
+clearAndAddTags(tags: TagsInfo) => Promise<void>
+```
+
+| Param      | Type                                          |
+| ---------- | --------------------------------------------- |
+| **`tags`** | <code><a href="#tagsinfo">TagsInfo</a></code> |
 
 --------------------
 
@@ -201,11 +239,18 @@ Remove all native listeners for this plugin.
 
 #### RegisterInfo
 
-| Prop                      | Type                | Description                | Since |
-| ------------------------- | ------------------- | -------------------------- | ----- |
-| **`notificationHubName`** | <code>string</code> | The notification hub name. | 1.0.0 |
-| **`connectionString`**    | <code>string</code> | The connection string.     | 1.0.0 |
-| **`deviceTag`**           | <code>string</code> | The device tag.            | 1.0.0 |
+| Prop                      | Type                | Description                   | Since |
+| ------------------------- | ------------------- | ----------------------------- | ----- |
+| **`notificationHubName`** | <code>string</code> | The notification hub name.    | 1.0.0 |
+| **`connectionString`**    | <code>string</code> | The connection string.        | 1.0.0 |
+| **`tags`**                | <code>string</code> | Comma separated list of tags. | 1.0.0 |
+
+
+#### TagsInfo
+
+| Prop       | Type                  |
+| ---------- | --------------------- |
+| **`tags`** | <code>string[]</code> |
 
 
 #### PluginListenerHandle
